@@ -1,0 +1,17 @@
+#+TITLE: Title
+#+AUTHOR: Diogo Ferrari\\
+#+AUTHOR: Division of the Social Sciences\\
+#+AUTHOR: University of Chicago\\
+#+AUTHOR: =diogoferrari@uchicago.edu=\\
+#+SETUPFILE: ./css/org.setup
+
+* References                                                      :ignore:
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+#+BEGIN_SRC latex
+\pagebreak
+#+END_SRC
+bibliographystyle:apalike
+bibliography:~/Dropbox/CienciasSociais/references/references.bib
+

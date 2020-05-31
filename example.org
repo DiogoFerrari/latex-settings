@@ -1,4 +1,4 @@
-#+TITLE: \LaTeX documnt example
+#+TITLE: \LaTeX \( \, \)Document Example
 #+AUTHOR: Diogo Ferrari\\
 #+AUTHOR: Department of Political Science\\
 #+AUTHOR: University of California, Riverside\\

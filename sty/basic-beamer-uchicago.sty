@@ -1,0 +1,34 @@
+%% =================================================
+%% basic-beamer.sty
+%% --------------------
+%% Author: Diogo Ferrari
+%%
+%%
+%% latex template for article (basic setup)
+%% Last version: jun/2016
+%=================================================
+
+
+\ProvidesPackage{basic-beamer-uchicago}
+%% -------------------------------------
+%% \titlegraphic{\vspace{-.4in}\includegraphics[width=15em]{./sty/uchicago.eps}\\\vspace{.2in}\today}
+\titlegraphic{\vspace{-.1in}\includegraphics[width=13em]{./sty/uchicago.eps}\\\vspace{.2in}}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\setbeamercolor{section in head/foot}{fg=white, bg=darkred}
+\setbeamercolor{frametitle}{fg=darkred, bg=grey!10}
+\setbeamercolor{title}{bg=darkred, fg=grey!10}
+%% bullet points color
+\setbeamercolor*{item}{fg=darkred}
+
+%% Set color font for bold text (** in org)
+\setbeamerfont{alerted text}{series=\bfseries} % bold face
+\setbeamercolor{alerted text}{fg=black}        % bold face color
+
+%% to include a outline before each section
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
