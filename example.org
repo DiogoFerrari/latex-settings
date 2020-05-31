@@ -1,0 +1,55 @@
+#+TITLE: \LaTeX documnt example
+#+AUTHOR: Diogo Ferrari\\
+#+AUTHOR: Department of Political Science\\
+#+AUTHOR: University of California, Riverside\\
+#+AUTHOR: 
+
+* Intro
+
+This file was created using \LaTeX from the file ~example.tex~. See that file for the details.
+* Math
+
+
+Below you find some examples of commands defined in ~math-commands.sty~
+- Expectation
+\[
+\E\left[ Y \mid X \right] = f(\mu )
+\]
+- Variance
+\[
+\Var\left[Y \mid X \right] = \sigma_{\epsilon }^{2} 
+\]
+* Diagrams
+
+Below you find some examples of diagrams defined in ~math-commands.sty~. For more examples, check ~latex-graphs.tex~ and ~latex-graphs.pdf~
+
+#+BEGIN_SRC latex :exports results :results raw
+\begin{figure}[ht]\centering
+\begin{tikzpicture}[thick,scale=1, every node/.style={transform shape}, on grid, auto]
+\node at (0, 0) [latent] (x) {X} ;
+\node[latent, above right = 1.5cm and 1.5cm of x] (z) {Z};
+\node[latent, right = 3cm and 3cm of x] (y) {Y};
+\node[latent, dashed, above left = 1.5cm and 1.5cm of x] (u1) {\( U_1 \)};
+\node[latent, dashed, above right = 1.5cm and 1.5cm of u1] (u2) {\( U_2 \)};
+%% edges
+\edge {x} {y} ;
+\edge {x} {z} ;
+\edge {z} {y} ;
+\edge {u1} {z} ;
+\edge {u2} {z} ;
+\edge {u2} {u1} ;
+\edge {u1} {x} ;
+\end{tikzpicture}
+\end{figure}
+#+END_SRC
+
+* References                                                      :ignore:
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+#+BEGIN_SRC latex
+\pagebreak
+#+END_SRC
+bibliographystyle:apalike
+bibliography:~/Dropbox/CienciasSociais/references/references.bib
+

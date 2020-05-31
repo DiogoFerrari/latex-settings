@@ -1,0 +1,7 @@
+* Instructions
+
+If you are new to \LaTeX, read [[https://www.latex-tutorial.com/tutorials/][this]] to document to get started.
+
+The files here provide some templates to create latex document and latex presentations.
+
+
