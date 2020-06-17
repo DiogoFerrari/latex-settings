@@ -5,6 +5,16 @@
 #+AUTHOR: =diogoferrari@uchicago.edu=\\
 #+SETUPFILE: ./css/org.setup
 
+
+
+1. What is the research question or main problem discussed in the paper?
+2. Are the concepts clearly defined or vaguely provided?
+3. What are the causal mechanisms or associations investigated in the study?
+4. What are the hypotheses?
+5. Which empirical approach was adoted? Which data, if any, was used? 
+6. How the research design helps to answer the theoretical question or hypothesis? What are the limitations of the research design to answer the question?
+7. What are the findings
+
 * References                                                      :ignore:
   :PROPERTIES:
   :UNNUMBERED: t
