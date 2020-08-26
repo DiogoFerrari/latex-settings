@@ -1,12 +1,18 @@
 #+OPTIONS: toc:t
 
-
 * Guidelines
-You can find guidelines in the folder ~./guidelines/~ to help you to write final papers, final research projects, and presentations. Below you find some suggestions of tools that are commonly used in academia.
+You can find guidelines in the folder ~./guidelines/~ to help you to write term papers, final research projects, and presentations for the project. Check the syllabus of the course for requirements. 
+
+Below you find some suggestions of tools that are commonly used in academia.
 
 * Latex and Beamer 
 
-From \( \LaTeX \) [[https://www.latex-project.org/][webiste]]:
+\LaTeX is a [[https://en.wikipedia.org/wiki/Markup_language][markup language]]. In text editors such Microsoft Word, Libre Office Writer, Pages on Mac you see immediately what you will get in the printed/final version of the document while you are editing it. Those text editors follow a /[[https://en.wikipedia.org/wiki/WYSIWYG][What You See Is What You Get]]/ (WYSIWYG) philosophy. \LaTex and other markup languages such as HTML and Markdown, on the other hand, you type not only the text, but also /instructions/ about how to format the text.
+
+Why is that useful? It makes it much easier for create academic documents, insert figures, tables, equations, diagrams, plots, etc. Another great advantage: it can create and organize automatically all the papers and books you cite in your text seamlessly and insert it at the end of the document automatically. \LaTeX is the default editor for professional academic writing, and many journals provide \LaTeX templates that authors can use to generate their paper in the journal's format.
+
+
+From \LaTeX [[https://www.latex-project.org/][webiste]]:
 
 #+begin_quote
 
@@ -14,18 +20,21 @@ LaTeX is a high-quality typesetting system; it includes features designed for te
 
 #+end_quote
 
-If you are new to \LaTeX, read [[https://www.latex-tutorial.com/][this]] document to get started. There are many tutorials on that website to help you to learn \LaTeX. Another good source is [[https://scholar.harvard.edu/mkomisarchik/tutorials-0][this]] tutorial by Mayya Komisarchik. You can also find some examples and templates in the folder ~./latex-and-beamer/~.
+If you are new to \LaTeX, read [[https://www.latex-tutorial.com/][this]] document to get started. There are many tutorials on that website to help you to learn \LaTeX. Another good source is [[https://scholar.harvard.edu/mkomisarchik/tutorials-0][this]] tutorial by Mayya Komisarchik. You can also find some examples and templates in the folder ~./latex-and-beamer-examples/~ in this repository.
 
+[[https://en.wikipedia.org/wiki/Beamer_(LaTeX)][Beamer]] is a \Latex class that work exactly in the same way, but it generates professional-looking presentations and posters instead of papers or documents. [[https://www.overleaf.com/learn/latex/Beamer_Presentations:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Getting_Started][Here]] is a good tutorial to learn how to use it. You can find some examples and templates in the folder ~./latex-and-beamer-examples/~.
 
-[[https://en.wikipedia.org/wiki/Beamer_(LaTeX)][Beamer]] is a latex document class that you can use to create professional-looking presentations. [[https://www.overleaf.com/learn/latex/Beamer_Presentations:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Getting_Started][Here]] is a good tutorial to learn how to use it. You can find some examples and templates in the folder ~./latex-and-beamer/~.
+* Reference Management
 
-It is a good idea to invest on learning [[https://en.wikipedia.org/wiki/Comparison_of_reference_management_software][reference management]] to organize your bibliography. All those softwares for reference management either store or can export references in [[https://en.wikipedia.org/wiki/BibTeX][.bib]] format. That format is nicely integrated with \LaTeX. Organizing references in .bib files make it much easier to cite previous work and include references.
+To organize citations and references in general, \LaTeX use files in the [[https://en.wikipedia.org/wiki/BibTeX][.bib]] format. A .bib file is just a regular text file that contains refereces stored in the ~bibtex~ format. If \LaTeX is the default choice of scholars to write academic paper, bibtex files are the default choice to store and organize biliography. [[https://scholar.google.com/][Google Scholar]], for instance, provide links for ~bibtex~ version of the reference that you can copy and paste (save) in your ~bibtex~ file to easily cite later in your paper or presentation. It is a good idea to learn how to organize your collection of references on a ~bibtex~ file or use a [[https://en.wikipedia.org/wiki/Comparison_of_reference_management_software][reference management]] that can export to ~bibtex~ (virtually all reference management software does that) to organize your bibliography. It will payoff in the long-run.
+
+See [[https://www.overleaf.com/learn/latex/bibliography_management_with_bibtex][Overleaf]] quick tutorial and [[https://www.latex-tutorial.com/tutorials/bibtex/][Latex-tutorial]] for a excellent place to get you started.
 
 * Statistical Programming: R and Python
 Here are some useful resources to learn R:
 
-- [[https://style.tidyverse.org/][R style guide]] (Tideverse) :: (free) some tips about how to structure your code to make it more readable and reproducible.
-- [[https://r4ds.had.co.nz/][R for Data Science]] :: (free) introductory-level book written by [[http://hadley.nz/][Hadley Wickham]], Chief Scientist at RStudio, and an Adjunct Professor of Statistics at the University of Auckland, Stanford University, and Rice University. The website of the book contains examples and includes instructions to work with pipe and tydeverse. The latter is a popular package ecosystem for data analysis and dataviz.
+- [[https://style.tidyverse.org/][R style guide]] (Tidyverse) :: (free) some tips about how to structure your code to make it more readable and reproducible.
+- [[https://r4ds.had.co.nz/][R for Data Science]] :: (free) introductory-level book written by [[http://hadley.nz/][Hadley Wickham]], Chief Scientist at [[https://rstudio.com/][RStudio]], and an Adjunct Professor of Statistics at the University of Auckland, Stanford University, and Rice University. The website of the book contains examples and includes instructions to work with pipe and [[https://www.tidyverse.org/][tidyverse]]. The latter is a popular package ecosystem for data analysis and dataviz.
 
 
 Here are some useful resources to learn Python:
@@ -50,60 +59,58 @@ Each project, by its turn, contains the same set of subfolders, although the fil
 The content of each folder is the following:
 
 #+ATTR_LATEX: :align llp{9cm} 
-|            |                          | <40>                                     |
-|------------+--------------------------+------------------------------------------|
-|------------+--------------------------+------------------------------------------|
-| Folder     | Subfolder                | Content                                  |
-|------------+--------------------------+------------------------------------------|
-|------------+--------------------------+------------------------------------------|
-| data       | ./final                  | contains the final version of the data set used for the analysis |
-|            | ./interim                | contains intermediate data sets created to explore the data, merge ,etc. The raw data after some recoding and manipulation by scripts in the folder ~.src/~ go here |
-|            | ./raw                    | contains the raw data sets as collected from external sources |
-|------------+--------------------------+------------------------------------------|
-| docs       |                          | contains documents related to the project, such as grant proposal, codebooks of the data sets, etc. |
-|------------+--------------------------+------------------------------------------|
-| manuscript | ./                       | file with papers written for the project |
-|            | ./sty                    | latex sty file I used to compile the papers |
-|            | ./submission             | contains versions of the papers submitted to journals. I create subfolders with the name of the journals to store the version submitted to that journal |
-|            | ./supplementary-material | all supplementary material, including figures and latex files |
-|            | ./tables-and-figures     | all .tex tables and figures I used in the papers |
-|------------+--------------------------+------------------------------------------|
-| outputs    | ./                       | files with the outputs of analyses. Usually, .Rout files and .log, but also files with simulated data sets |
-|------------+--------------------------+------------------------------------------|
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Folder     | Subfolder                | Content                                                                                                                                                                                                                                                    |
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| data       | ./final                  | contains the final version of the data set used for the analysis after all recoding, cleaning, and data preparation. Usually, the files here are the ones I distribute for replication if someone asks.                                                    |
+|            | ./interim                | contains intermediate data sets created to explore the data, merge ,etc. The raw data after some recoding and manipulation by scripts in the folder ~.src/~ go here                                                                                        |
+|            | ./raw                    | contains the raw data sets as collected from external sources                                                                                                                                                                                              |
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| docs       |                          | contains documents related to the project, such as grant proposal, codebooks for the variables in the datasets, etc.                                                                                                                                       |
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| manuscript | ./                       | file with papers written for the project                                                                                                                                                                                                                   |
+|            | ./sty                    | latex sty file I used to compile the papers                                                                                                                                                                                                                |
+|            | ./submission             | contains versions of the papers submitted to journals. I create subfolders with the name of the journals to store the version submitted to that journal                                                                                                    |
+|            | ./supplementary-material | all supplementary material, including figures and latex files                                                                                                                                                                                              |
+|            | ./tables-and-figures     | all .tex tables and figures I used in the papers                                                                                                                                                                                                           |
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| outputs    | ./                       | files with the outputs of analyses. Usually, .Rout files and .log, but also files with simulated data sets                                                                                                                                                 |
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | references | ./                       | I keep all my .pdf files with papers and books in a single folder shared by all projects. In this folder, I keep files that are related to the project and that I use as reference, such as handouts, reports written by other scholars on the topic, etc. |
-|------------+--------------------------+------------------------------------------|
-| reports    | ./                       | Reports I create for the project, such as exploratory data analysis |
-|------------+--------------------------+------------------------------------------|
-| src        |                          | scripts will go in subfolders of this folder |
-|            | ./data-collecting        | scripts I used to collect the raw data |
-|            | ./data-organizing        | scripts I used for data wrangling and to create interim and final data sets from raw data |
-|            | ./eda                    | scripts I used for exploratory data analysis, prior to final analysis |
-|            | ./model                  | scripts that produce the final results and analysis. |
-|            | ./tables-and-figures     | I use this folder in case I create temporary tables and figures |
-|            | ./test                   | A folder for running tests in the code   |
-|------------+--------------------------+------------------------------------------|
-|------------+--------------------------+------------------------------------------|
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| reports    | ./                       | Reports I create for the project, such as exploratory data analyses                                                                                                                                                                                        |
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| src        |                          | all scripts go in subfolders of this folder                                                                                                                                                                                                           |
+|            | ./data-collecting        | scripts I used to collect the raw data                                                                                                                                                                                                                     |
+|            | ./data-organizing        | scripts I used for data wrangling and to create interim and final data sets from raw data                                                                                                                                                                  |
+|            | ./eda                    | scripts I used for exploratory data analysis, prior to final analysis                                                                                                                                                                                      |
+|            | ./model                  | scripts that produce the final results and analysis.                                                                                                                                                                                                       |
+|            | ./tables-and-figures     | I use this folder in case I create temporary tables and figures                                                                                                                                                                                            |
+|            | ./test                   | A folder for running tests in the code                                                                                                                                                                                                                     |
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
 ** Git and Github
-Version control softwares are very useful for production. Bryan (2018) contains some points about using version control. One of the most common version control software is [[https://git-scm.com/][Git]]. It can be used to keep track of changes you make to files and scripts. [[https://github.com/][GitHub]] is a could platform that uses git. You can find a very nice introductory material [[https://www.elegantthemes.com/blog/resources/git-and-github-a-beginners-guide-for-complete-newbies][here]].
+Version control softwares are very useful for production. Bryan (2018) contains some important points about using version control. One of the most common version control software is [[https://git-scm.com/][Git]]. It can be used to keep track of changes you make to files and scripts. [[https://github.com/][GitHub]] is a cloud platform that uses Git. You can find a very nice introductory material [[https://www.elegantthemes.com/blog/resources/git-and-github-a-beginners-guide-for-complete-newbies][here]].
 
 
 * Integrated Development Environment (IDE)
 
-You can write scripts as plain text for \LaTeX, Python, R, and Stata in any text editor. You will be better off, however, if you used an Integrated Development Environment (IDE). IDE are softwares written to facilite code writing. The choce is personal, but here are some good options:
+You can write scripts as plain text for \LaTeX, Python, R, and Stata in any text editor. You will be better off, however, if you used an Integrated Development Environment (IDE). IDE are softwares written to facilite code writing. The choice is personal, but here are some good options:
 
-Here are the main classical options:
-
-- [[https://www.gnu.org/software/emacs/][Emacs]]: this is my personal choice. I use emacs for everything, including writing code in Latex, Python, R, academic papers, books, create presentations, organize and manage citation and references (with bibtex), communicate with HPC servers, organize my schedule using org-mode (a "package" to use with emacs), and so on. It is highly configurable, but dull at its out-of-the-box raw state, without configuration. It takes quite some time to learn and unleash all its potential, but it is worth the time invested.
+- [[https://www.gnu.org/software/emacs/][Emacs]]: this is my personal choice. I use emacs for everything, including writing code in Latex, Python, R, academic papers, books, create presentations, organize and manage citation and references (with bibtex), communicate with HPC servers, organize my schedule using org-mode (an emacs "package"), and so on. It is highly configurable, but it is dull in its out-of-the-box raw state without further configuration. It takes quite some time to learn and unleash all its potential, but it is worth the time invested.
 - [[https://www.vim.org/][Vim]]: main emacs competitor. Good, but not as resourceful.
 
   
-Some good out-of-the-box and readyand-easy-to-use IDEs are:
-- [[https://rstudio.com/][RStudio]]: very easy to use and the barrier of entry is low. Good to write scripts in R.
+Some good out-of-the-box IDE options are:
+
+- [[https://rstudio.com/][RStudio]]: very easy to use and the barrier of entry is low. Good to write scripts in R and in markdown (another markup language).
 - [[https://www.sublimetext.com/][Sublime]]: good for many programming languages, including R and Python. Also easy to use.
 - [[https://atom.io/][Atom]]: like Sublime
-- [[https://jupyter.org/][Juputer Notebook]]: it runs on web browsers, and can be used with many programming languages. There is anice tutorial [[https://www.dataquest.io/blog/jupyter-notebook-tutorial/][here]].
+- [[https://jupyter.org/][Juputer Notebook]]: it runs on web browsers, and can be used with many programming languages. There is a nice tutorial [[https://www.dataquest.io/blog/jupyter-notebook-tutorial/][here]].
 - [[http://texstudio.sourceforge.net/][TexStudio]]: good for writing code in Latex.
 
 

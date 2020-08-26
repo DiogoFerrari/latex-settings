@@ -1,0 +1,148 @@
+#+TITLE: \LaTeX \( \, \)Document Example
+#+AUTHOR: Diogo Ferrari\\
+#+AUTHOR: Department of Political Science\\
+#+AUTHOR: University of California, Riverside\\
+#+AUTHOR: 
+#+DATE: 
+#+LaTeX_HEADER: \usepackage{cprotect}
+
+
+* Intro
+
+This file was created using \LaTeX. See the source file ~.tex~ for the details of the source code in markup language. cite:lamport1994latex is a comprehensive \LaTeX manual, which includes user's guide and references. You can find a good and shorter tutorials online [[https://www.latex-tutorial.com/][here]]. Below, you will find some very simple examples that you can use as a template to write your documents.
+
+
+
+* Math
+
+
+The examples below use math commands defined in the file ~./sty/math-commands.sty~. \LaTeX contains many packages with predefined math symbols that you can use. Check the references above.
+
+- Expectation
+\[
+\E\left[ Y \mid X \right] = f(\mu )
+\]
+- Variance
+\[
+\Var\left[Y \mid X \right] = \sigma_{\epsilon }^{2} = \E\left[ (Y - \E\left[ Y \right])^2 \mid X \right]=\int_{}^{} (y-\E\left[ Y \right])^2p(y \mid x)dy 
+\]
+* Diagrams
+
+To create diagrams, you can use the \LaTeX package ~Tikz~. Some commands to create the diagram below was defined in ~./sty/math-commands.sty~. For more examples, check the files ~latex-graphs.tex~ and ~latex-graphs.pdf~. You can find ~TikZ~ manual online.
+
+#+BEGIN_SRC latex :exports results :results raw
+\begin{figure}[ht]\centering
+\begin{tikzpicture}[thick,scale=1, every node/.style={transform shape}, on grid, auto]
+\node at (0, 0) [latent] (x) {X} ;
+\node[obs, above right = 1.5cm and 1.5cm of x] (z) {Z};
+\node[obs, right = 3cm and 3cm of x] (y) {Y};
+\node[obs, above left = 1.5cm and 1.5cm of x] (u1) {\( U_1 \)};
+\node[latent, above right = 1.5cm and 1.5cm of u1] (u2) {\( U_2 \)};
+%% edges
+\path[edge] (x) edge[bend left=0] (y);
+\path[edge] (x) edge[bend left=0] (z);
+\path[edge] (z) edge[bend left=0] (y);
+\path[edge] (u1) edge[bend left=0] (z);
+\path[edge] (u1) edge[bend left=0] (x);
+\path[edge] (u2) edge[bend left=0] (z);
+\path[edge] (u2) edge[bend left=0] (u1);
+\end{tikzpicture}
+\end{figure}
+#+END_SRC
+
+* Figures
+
+You can include a single figure or a grid with many subfigures. See Figure ref:fig-latex, which shows a single figure. Figure ref:fig:fig contains two subfigures: Figures ref:fig:sub-first-of-two and ref:fig:sub-second-of-two. Figure  ref:fig:fig-five contains a grid with five subfigures.
+
+#+ATTR_ORG: :width 200/250/300/400/500/600
+#+ATTR_LATEX: :width .7\textwidth :placement [ht] 
+#+CAPTION: This is a single figure about LaTeX
+#+LABEL: fig-latex
+[[./fig-latex.jpg]]
+
+#+BEGIN_SRC latex :exports results :results raw
+\begin{figure}[ht]
+\begin{subfigure}{.5\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=.7\linewidth]{./fig-latex.jpg}  % figures rescaled for .7 of linewidth
+  \cprotect\caption{Put your FIRST sub-caption here. This subfigure was manually rescaled using command \verb|width=.7\linewidth| (see source .tex) to occupy .7 of its reserved space}
+  \label{fig:sub-first-of-two}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your SECOND sub-caption here}
+  \label{fig:sub-second-of-two}
+  % ------------------------------
+\end{subfigure}
+\caption{This is a Figure with two subfigures. Put your caption for the whole figure here}
+\label{fig:fig}
+\end{figure}
+#+END_SRC
+
+
+
+#+BEGIN_SRC latex :exports results :results raw
+\begin{figure}[ht]
+\begin{subfigure}{.5\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your FIRST sub-caption here}
+  \label{fig:sub-first}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your SECOND sub-caption here}
+  \label{fig:sub-second}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your THIRD sub-caption here}
+  \label{fig:sub-second}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your FORTH sub-caption here}
+  \label{fig:sub-second}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your FIFTH sub-caption here}
+  \label{fig:sub-second}
+  % ------------------------------
+\end{subfigure}
+\caption{This is a Figure with five subfigures. Put your caption for the whole figure here.}
+\label{fig:fig-five}
+\end{figure}
+#+END_SRC
+
+
+* Tables
+
+
+* References                                                      :ignore:
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+#+BEGIN_SRC latex
+\pagebreak
+#+END_SRC
+bibliographystyle:apalike
+bibliography:~/Dropbox/CienciasSociais/references/references.bib
+

@@ -1,0 +1,161 @@
+% Created 2020-08-25 Tue 18:54
+% Intended LaTeX compiler: pdflatex
+% Template: Diogo Ferrari
+\documentclass[a4paper]{article}
+% === Packages =================================
+\usepackage{./sty/basic-article}
+\usepackage{./sty/math-commands}
+\usepackage{./sty/math-commands-thm}
+\usepackage{./sty/acronyms}
+% === Document =================================
+                  \usepackage{cprotect}
+\author{Diogo Ferrari\\
+Department of Political Science\\
+University of California, Riverside\\
+}
+\date{}
+\title{\LaTeX \(\,\)Document Example}
+\begin{document}
+
+\maketitle
+
+
+\section{Intro}
+\label{sec:org8b8764c}
+
+This file was created using \LaTeX. See the source file \texttt{.tex} for the details of the source code in markup language. \cite{lamport1994latex} is a comprehensive \LaTeX manual, which includes user's guide and references. You can find a good and shorter tutorials online \href{https://www.latex-tutorial.com/}{here}. Below, you will find some very simple examples that you can use as a template to write your documents.
+
+
+
+\section{Math}
+\label{sec:org198a900}
+
+
+The examples below use math commands defined in the file \texttt{./sty/math-commands.sty}. \LaTeX contains many packages with predefined math symbols that you can use. Check the references above.
+
+\begin{itemize}
+\item Expectation
+\end{itemize}
+\[
+\E\left[ Y \mid X \right] = f(\mu )
+\]
+\begin{itemize}
+\item Variance
+\end{itemize}
+\[
+\Var\left[Y \mid X \right] = \sigma_{\epsilon }^{2} = \E\left[ (Y - \E\left[ Y \right])^2 \mid X \right]=\int_{}^{} (y-\E\left[ Y \right])^2p(y \mid x)dy 
+\]
+\section{Diagrams}
+\label{sec:orga16fdad}
+
+To create diagrams, you can use the \LaTeX package \texttt{Tikz}. Some commands to create the diagram below was defined in \texttt{./sty/math-commands.sty}. For more examples, check the files \texttt{latex-graphs.tex} and \texttt{latex-graphs.pdf}. You can find \texttt{TikZ} manual online.
+
+\begin{figure}[ht]\centering
+\begin{tikzpicture}[thick,scale=1, every node/.style={transform shape}, on grid, auto]
+\node at (0, 0) [latent] (x) {X} ;
+\node[obs, above right = 1.5cm and 1.5cm of x] (z) {Z};
+\node[obs, right = 3cm and 3cm of x] (y) {Y};
+\node[obs, above left = 1.5cm and 1.5cm of x] (u1) {\( U_1 \)};
+\node[latent, above right = 1.5cm and 1.5cm of u1] (u2) {\( U_2 \)};
+%% edges
+\path[edge] (x) edge[bend left=0] (y);
+\path[edge] (x) edge[bend left=0] (z);
+\path[edge] (z) edge[bend left=0] (y);
+\path[edge] (u1) edge[bend left=0] (z);
+\path[edge] (u1) edge[bend left=0] (x);
+\path[edge] (u2) edge[bend left=0] (z);
+\path[edge] (u2) edge[bend left=0] (u1);
+\end{tikzpicture}
+\end{figure}
+
+\section{Figures}
+\label{sec:org809f860}
+
+You can include a single figure or a grid with many subfigures. See Figure \ref{fig-latex}, which shows a single figure. Figure \ref{fig:fig} contains two subfigures: Figures \ref{fig:sub-first-of-two} and \ref{fig:sub-second-of-two}. Figure  \ref{fig:fig-five} contains a grid with five subfigures.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.7\textwidth]{./fig-latex.jpg}
+\caption{\label{fig-latex}This is a single figure about \LaTeX{}}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{subfigure}{.5\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=.7\linewidth]{./fig-latex.jpg}  % figures rescaled for .7 of linewidth
+  \cprotect\caption{Put your FIRST sub-caption here. This subfigure was manually rescaled using command \verb|width=.7\linewidth| (see source .tex) to occupy .7 of its reserved space}
+  \label{fig:sub-first-of-two}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your SECOND sub-caption here}
+  \label{fig:sub-second-of-two}
+  % ------------------------------
+\end{subfigure}
+\caption{This is a Figure with two subfigures. Put your caption for the whole figure here}
+\label{fig:fig}
+\end{figure}
+
+
+
+\begin{figure}[ht]
+\begin{subfigure}{.5\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your FIRST sub-caption here}
+  \label{fig:sub-first}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your SECOND sub-caption here}
+  \label{fig:sub-second}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your THIRD sub-caption here}
+  \label{fig:sub-second}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your FORTH sub-caption here}
+  \label{fig:sub-second}
+  % ------------------------------
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  % ------------------------------
+  \centering
+  \includegraphics[width=1\linewidth]{./fig-latex.jpg}  
+  \caption{Put your FIFTH sub-caption here}
+  \label{fig:sub-second}
+  % ------------------------------
+\end{subfigure}
+\caption{This is a Figure with five subfigures. Put your caption for the whole figure here.}
+\label{fig:fig-five}
+\end{figure}
+
+
+\section{Tables}
+\label{sec:org4fc136c}
+
+
+
+\label{sec:org97a4933}
+\pagebreak
+
+\bibliographystyle{apalike}
+\bibliography{../../../../references/references}
+\end{document}

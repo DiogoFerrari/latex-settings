@@ -1,0 +1,40 @@
+#+TITLE:  Beamer 
+#+SUBTITLE: A \LaTeX Class for Great-looking Presentations
+#+DATE: 
+#+AUTHOR: Diogo Ferrari\\
+#+AUTHOR: Department of Political Science\\
+#+AUTHOR: University of California, Riverside\\
+#+BEAMER_THEME:  Madrid
+# other themes:  Frankfurt, plain, default, Madrid
+
+* Motivation
+** Motivation
+*** Slide                                                  :ignore:slide:
+
+\large
+
+- ~Beamer~ is a \LaTeX package (a class, more precisely) to create presentations using latex.
+- If you are a beginner, you can find information [[https://www.overleaf.com/learn/latex/Beamer][here]] 
+
+\vspace{.3in}
+  
+#+begin_emphasis org
+
+\centering This document was created to serve as a template to create ~beamer~ presentations. *See file ~presentation.tex~*
+
+#+end_emphasis
+  
+*** Handout                                                :ignore:handout:
+
+* References :ignore:
+#+BEGIN_SRC latex
+\appendix
+\pagebreak
+#+END_SRC
+** References (font for slides)                                :ignore:slide:
+\tiny
+ *References*
+** References (bib file)                                             :ignore:
+bibliographystyle:apalike
+bibliography:~/Dropbox/CienciasSociais/references/references.bib
+
