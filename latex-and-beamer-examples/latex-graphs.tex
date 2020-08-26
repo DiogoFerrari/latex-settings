@@ -1,4 +1,4 @@
-% Created 2020-08-20 Thu 17:44
+% Created 2020-08-25 Tue 19:26
 % Intended LaTeX compiler: pdflatex
 % Template: Diogo Ferrari
 \documentclass[a4paper]{article}
@@ -6,6 +6,7 @@
 \usepackage{./sty/basic-article}
 \usepackage{./sty/math-commands}
 \usepackage{./sty/math-commands-thm}
+\usepackage{./sty/acronyms}
 % === Document =================================
 \author{Diogo Ferrari\\
 Department of Political Science\\
@@ -20,28 +21,27 @@ University of California, Riverside\\
 
 \pagebreak
 \section{Instructions and Information}
-\label{sec:org0a9bab6}
+\label{sec:org85dfd10}
 
-To draw this diagrams, you need to use the following latex packages:
+This document uses a few \Latex packages and configurations:
 \begin{itemize}
 \item \texttt{\textbackslash{}usepackage\{tikz\}}
 \item \texttt{\textbackslash{}usetikzlibrary\{decorations.pathreplacing\}}
 \item \texttt{\textbackslash{}usepackage\{forest\}}
-\item \textbf{Note:} you may need additional packages. The file \texttt{./sty/basic-article.sty} contains all the packages you need and some extra ones.
-\item You also need to create \texttt{./sty/}, save the file \texttt{math-commands.sty} on that folder, and include \texttt{\textbackslash{}usepackage\{./sty/math-commands\}} in your main file.
 \end{itemize}
+The files \texttt{./sty/basic-article.sty} and \texttt{./sty/math-commands} contain all the packages and commands required to create this document. If you are trying to compile this file locally in your computer, you need to create a subfolder \texttt{./sty/} in the folder of the \texttt{.tex} file you are trying to compile, save both the file \texttt{math-commands.sty} and \texttt{basic-article.sty} on that subfolder, and include \texttt{\textbackslash{}usepackage\{./sty/math-commands\}} in your main \texttt{.tex} file.
 
 You can check the \texttt{.tex} file used to create this \texttt{.pdf} for details.
 
-The diagrams created here uses the package \texttt{tikz}. See documentation \href{https://ctan.org/pkg/pgf?lang=en}{here}. It extends that package using commands whose deetails you can find \href{https://github.com/jluttine/tikz-bayesnet}{here}. The full code is in the appendix \ref{ap-settings} below, which is also in the file \texttt{math-commands.sty}.
+See documentation of \texttt{TikZ} \href{https://ctan.org/pkg/pgf?lang=en}{here}. 
 
 
 \pagebreak
 \section{Nodes and Edges}
-\label{sec:orgf0508ee}
+\label{sec:orgdda72dd}
 \subsection{Basic shapes}
-\label{sec:org4c9d199}
-Some predefined nodes on \texttt{basic-math-commands.sty}
+\label{sec:orgf05106d}
+Some predefined nodes on \texttt{math-commands.sty}
 
 \begin{figure}[ht]
 \begin{tikzpicture}
@@ -99,7 +99,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \clearpage
 
 \subsection{Template}
-\label{sec:org2ffc3e6}
+\label{sec:org774504e}
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
@@ -124,7 +124,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{description}
 
 \subsection{Examples}
-\label{sec:org977afbb}
+\label{sec:orgfc5e2a3}
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
 \begin{figure}[ht]\centering
@@ -223,18 +223,14 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{figure}
 
 
-\section{Edges}
-\label{sec:org0b8c24c}
-\subsection{Basic Edges}
-\label{sec:orgce18520}
 
 \FloatBarrier
 \clearpage
 \section{Plate and Parametric Models}
-\label{sec:org5f7d5f1}
+\label{sec:org5bdfec1}
 
 \subsection{Basic shapes}
-\label{sec:org1757df3}
+\label{sec:org59145b7}
 
 \begin{figure}[ht]\centering
 \begin{tikzpicture}
@@ -252,7 +248,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 
 
 \subsection{Examples}
-\label{sec:orgc27893a}
+\label{sec:org120b2d9}
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
@@ -404,9 +400,9 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{figure}
 
 \section{DAG}
-\label{sec:orgf592a2c}
+\label{sec:org6f9a3bb}
 \subsection{Nodes as Text and box}
-\label{sec:org94db989}
+\label{sec:org7b60d49}
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
 \begin{figure}[ht]\centering
@@ -437,7 +433,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{figure}
 
 \subsection{Nodes as text}
-\label{sec:orga9e66c8}
+\label{sec:orgfb6d91a}
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
@@ -469,7 +465,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{figure}
 
 \subsection{Nodes as variables (relative position)}
-\label{sec:org9651336}
+\label{sec:org4a477aa}
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
@@ -501,7 +497,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{figure}
 
 \subsection{Nodes as variables and circles}
-\label{sec:org6cfd79c}
+\label{sec:orge5bcee8}
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
@@ -534,7 +530,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 
 
 \subsection{Nodes as variables and circles (closer)}
-\label{sec:org0a50cb1}
+\label{sec:orgf822513}
 
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
@@ -568,7 +564,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 
 
 \subsection{Nodes as variables and circles (closer, no edge labels)}
-\label{sec:org8a65c94}
+\label{sec:orga30954e}
 
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
@@ -601,7 +597,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{figure}
 
 \subsection{Nodes as variables and circles (closer, no edge labels, and subfigures)}
-\label{sec:org77f48a0}
+\label{sec:org33606e4}
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
@@ -685,7 +681,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{figure}
 
 \subsection{Large DAG}
-\label{sec:org02b20bd}
+\label{sec:org1adab87}
 
 \begin{figure}[ht]\centering
 \begin{tikzpicture}[thick,scale=1, every node/.style={transform shape}, on grid, auto]
@@ -707,7 +703,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 
 
 \subsection{Large DAG (using latent var notation)}
-\label{sec:orge34ae89}
+\label{sec:org7b75cf7}
 
 \begin{figure}[ht]\centering
 \begin{tikzpicture}[thick,scale=1, every node/.style={transform shape}, on grid, auto]
@@ -729,7 +725,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 
 
 \subsection{Large DAG (using latent var notation alternative)}
-\label{sec:org7fd745a}
+\label{sec:org2d50678}
 
 
 \begin{figure}[ht]\centering
@@ -751,7 +747,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 \end{figure}
 
 \section{Undirected Graphs}
-\label{sec:org9f612b4}
+\label{sec:org5c7e0bf}
 
 \lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
 \begin{lstlisting}
@@ -862,7 +858,7 @@ Some predefined nodes on \texttt{basic-math-commands.sty}
 
 
 \section{Tree}
-\label{sec:org5ca55ed}
+\label{sec:orgcef8052}
 
 It uses the package \texttt{forest}, so you need to include \texttt{\textbackslash{}usepackage\{forest\}} in the latex header.
 Snippet: dagtree
@@ -917,217 +913,4 @@ Snippet: dagtree
   ]
 \end{forest}
 \end{figure}
-
-\appendix
-\section{Settings to draw diagrams}
-\label{sec:orgd70946d}
-\label{ap-settings}
-\label{ap-settings}
-
-
-\lstset{numbers=left,language=[LaTeX]TeX,label= ,caption= ,captionpos=b}
-\begin{lstlisting}
-%% ================================================
-%% For graphs
-%% ================================================
-% tikzlibrary.code.tex
-% Modified from https://github.com/jluttine/tikz-bayesnet
-% 
-% Copyright 2010-2011 by Laura Dietz
-% Copyright 2012 by Jaakko Luttinen
-%
-% This file may be distributed and/or modified
-%
-% 1. under the LaTeX Project Public License and/or
-% 2. under the GNU General Public License.
-%
-% See the files LICENSE_LPPL and LICENSE_GPL for more details.
-
-% Load other libraries
-\usetikzlibrary{shapes}
-\usetikzlibrary{fit}
-\usetikzlibrary{chains}
-\usetikzlibrary{arrows}
-
-% Nodes
-% ----- 
-\usetikzlibrary{shadows.blur}
-\usetikzlibrary{shapes.symbols}
-\newcommand{\DAGnodedistance}{30pt}
-\newcommand{\DAGinnersep}{5pt}
-\newcommand{\DAGminsize}{20pt}
-\newcommand{\DAGfont}{\fontsize{10}{10}\selectfont}
-\newcommand{\DAGcolorfont}{black}
-\newcommand{\DAGcolorborder}{black}
-\newcommand{\DAGcolorfill}{white}
-\newcommand{\DAGlinewidth}{.7pt}
-\tikzstyle{basic} = [
-shape         =circle, 
-draw          =\DAGcolorborder,
-line width    =\DAGlinewidth,
-minimum size  =\DAGminsize,
-inner sep     =\DAGinnersep,
-font          =\DAGfont,
-text          =\DAGcolorfont,
-fill          =\DAGcolorfill,
-node distance =\DAGnodedistance,                  % for relative positions
-blur shadow={shadow blur steps=5}
-]
-\tikzstyle{latent}         = [basic]                        % Latent node
-\tikzstyle{obs}            = [basic, fill=gray!25]          % Observed node
-%% \tikzstyle{factor}         = [basic, fill=black, text=white]% Factor node
-\tikzstyle{factor}         = [rectangle, fill=black,minimum size=5pt, inner sep=0pt, node distance=0.4]
-\tikzstyle{factor caption} = [caption] %
-\tikzstyle{const}          = [basic, rectangle,]            % Constant node
-\tikzstyle{det}            = [basic, inner sep     =1pt, diamond]               % Deterministic node
-\tikzstyle{dist}           = [rectangle, draw, fill=black,minimum size=10pt, inner sep=0pt, node distance=0.4]
-\tikzstyle{operation}      = [basic, inner sep     =1pt, diamond]               % Deterministic node
-\tikzstyle{textnode}       = [basic, rectangle, inner sep=5pt]               % Deterministic node
-
-
-% Plate node
-% ---------- 
-\tikzset{
-  plate/.style={
-    draw = black,
-    shape=rectangle,
-    rounded corners=0.5ex,
-    thick,
-    minimum width=3.1cm,
-    text width=3.1cm,
-    align=right,
-    inner sep=10pt,
-    inner ysep=10pt,
-  }
-}
-\newcommand{\DAGplateinnersep}{15pt}
-\newcommand{\DAGplatecolorborder}{black}
-\tikzstyle{plate caption} = [
-  caption,
-  node distance=0,
-  inner sep=0pt,
-  below left=0pt and 0pt of #1.south east] %
-\tikzstyle{plate} = [
-  draw=black,
-  text width=3.1cm,
-  shape=rectangle,
-  solid,           % dashed, dotted
-  rounded corners,
-  fit=#1,
-  color         = \DAGplatecolorborder,
-  inner sep     = \DAGplateinnersep,
-  xshift=0cm,   % displacement to x direcation
-  yshift=0cm,   % displacement to y direcation
-  node distance=5pt, 
-]
-\tikzstyle{wrap}  = [inner sep=0pt, fit=#1]% Invisible wrapper node
-\tikzstyle{gate}  = [draw, rectangle, dashed, fit=#1]% Gate
-
-% Caption node
-% ------------ 
-\tikzstyle{caption} = [font=\footnotesize, node distance=0] %
-\tikzstyle{every label} += [caption] %
-
-\tikzset{>={triangle 45}}
-
-%\pgfdeclarelayer{b}
-%\pgfdeclarelayer{f}
-%\pgfsetlayers{b,main,f}
-
-% \factoredge [options] {inputs} {factors} {outputs}
-\newcommand{\factoredge}[4][]{ %
-  % Connect all nodes #2 to all nodes #4 via all factors #3.
-  \foreach \f in {#3} { %
-    \foreach \x in {#2} { %
-      \path (\x) edge[-,#1] (\f) ; %
-      %\draw[-,#1] (\x) edge[-] (\f) ; %
-    } ;
-    \foreach \y in {#4} { %
-      \path (\f) edge[->,#1] (\y) ; %
-      %\draw[->,#1] (\f) -- (\y) ; %
-    } ;
-  } ;
-}
-
-% \edge [options] {inputs} {outputs}
-\newcommand{\edge}[3][]{ %
-  % Connect all nodes #2 to all nodes #3.
-  \foreach \x in {#2} { %
-    \foreach \y in {#3} { %
-      \path (\x) edge [->,#1 ] (\y) ;%
-      %\draw[->,#1] (\x) -- (\y) ;%
-    } ;
-  } ;
-}
-
-% \factor [options] {name} {caption} {inputs} {outputs}
-\newcommand{\factor}[5][]{ %
-  % Draw the factor node. Use alias to allow empty names.
-  \node[factor, label={[name=#2-caption]#3}, name=#2, #1,
-  alias=#2-alias] {} ; %
-  % Connect all inputs to outputs via this factor
-  \factoredge {#4} {#2-alias} {#5} ; %
-}
-
-% \plate [options] {name} {fitlist} {caption}
-\newcommand{\plate}[4][]{ %
-  \node[wrap=#3] (#2-wrap) {}; %
-  \node[plate caption=#2-wrap] (#2-caption) {#4}; %
-  \node[plate=(#2-wrap)(#2-caption), #1] (#2) {}; %
-}
-
-% \gate [options] {name} {fitlist} {inputs}
-\newcommand{\gate}[4][]{ %
-  \node[gate=#3, name=#2, #1, alias=#2-alias] {}; %
-  \foreach \x in {#4} { %
-    \draw [-*,thick] (\x) -- (#2-alias); %
-  } ;%
-}
-
-% \vgate {name} {fitlist-left} {caption-left} {fitlist-right}
-% {caption-right} {inputs}
-\newcommand{\vgate}[6]{ %
-  % Wrap the left and right parts
-  \node[wrap=#2] (#1-left) {}; %
-  \node[wrap=#4] (#1-right) {}; %
-  % Draw the gate
-  \node[gate=(#1-left)(#1-right)] (#1) {}; %
-  % Add captions
-  \node[caption, below left=of #1.north ] (#1-left-caption)
-  {#3}; %
-  \node[caption, below right=of #1.north ] (#1-right-caption)
-  {#5}; %
-  % Draw middle separation
-  \draw [-, dashed] (#1.north) -- (#1.south); %
-  % Draw inputs
-  \foreach \x in {#6} { %
-    \draw [-*,thick] (\x) -- (#1); %
-  } ;%
-}
-
-% \hgate {name} {fitlist-top} {caption-top} {fitlist-bottom}
-% {caption-bottom} {inputs}
-\newcommand{\hgate}[6]{ %
-  % Wrap the left and right parts
-  \node[wrap=#2] (#1-top) {}; %
-  \node[wrap=#4] (#1-bottom) {}; %
-  % Draw the gate
-  \node[gate=(#1-top)(#1-bottom)] (#1) {}; %
-  % Add captions
-  \node[caption, above right=of #1.west ] (#1-top-caption)
-  {#3}; %
-  \node[caption, below right=of #1.west ] (#1-bottom-caption)
-  {#5}; %
-  % Draw middle separation
-  \draw [-, dashed] (#1.west) -- (#1.east); %
-  % Draw inputs
-  \foreach \x in {#6} { %
-    \draw [-*,thick] (\x) -- (#1); %
-  } ;%
-}
-
-% End graphs
-%==================================================
-
-\end{lstlisting}
 \end{document}

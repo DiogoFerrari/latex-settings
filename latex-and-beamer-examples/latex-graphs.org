@@ -9,22 +9,21 @@
 \pagebreak
 * Instructions and Information
 
-To draw this diagrams, you need to use the following latex packages:
+This document uses a few \Latex packages and configurations:
   - ~\usepackage{tikz}~
   - ~\usetikzlibrary{decorations.pathreplacing}~
   - ~\usepackage{forest}~
-  - *Note:* you may need additional packages. The file ~./sty/basic-article.sty~ contains all the packages you need and some extra ones.
-  - You also need to create ~./sty/~, save the file ~math-commands.sty~ on that folder, and include ~\usepackage{./sty/math-commands}~ in your main file.
+The files ~./sty/basic-article.sty~ and ~./sty/math-commands~ contain all the packages and commands required to create this document. If you are trying to compile this file locally in your computer, you need to create a subfolder ~./sty/~ in the folder of the ~.tex~ file you are trying to compile, save both the file ~math-commands.sty~ and ~basic-article.sty~ on that subfolder, and include ~\usepackage{./sty/math-commands}~ in your main ~.tex~ file.
 
 You can check the ~.tex~ file used to create this ~.pdf~ for details.
   
-The diagrams created here uses the package ~tikz~. See documentation [[https://ctan.org/pkg/pgf?lang=en][here]]. It extends that package using commands whose deetails you can find [[https://github.com/jluttine/tikz-bayesnet][here]]. The full code is in the appendix ref:ap-settings below, which is also in the file ~math-commands.sty~.
+See documentation of ~TikZ~ [[https://ctan.org/pkg/pgf?lang=en][here]]. 
 
 
 \pagebreak
 * Nodes and Edges
 ** Basic shapes
-Some predefined nodes on ~basic-math-commands.sty~
+Some predefined nodes on ~math-commands.sty~
 
 #+BEGIN_SRC latex :exports results :results raw
 \begin{figure}[ht]
@@ -157,8 +156,6 @@ Some predefined nodes on ~basic-math-commands.sty~
 #+END_SRC
 
 
-* Edges
-** Basic Edges
 
 \FloatBarrier
 \clearpage
@@ -566,214 +563,4 @@ Snippet: dagtree
   ]
 \end{forest}
 \end{figure}
-#+END_SRC
-\appendix
-* Settings to draw diagrams
-\label{ap-settings}
-<<ap-settings>>
-
-
-#+BEGIN_SRC latex :exports code :results raw
-%% ================================================
-%% For graphs
-%% ================================================
-% tikzlibrary.code.tex
-% Modified from https://github.com/jluttine/tikz-bayesnet
-% 
-% Copyright 2010-2011 by Laura Dietz
-% Copyright 2012 by Jaakko Luttinen
-%
-% This file may be distributed and/or modified
-%
-% 1. under the LaTeX Project Public License and/or
-% 2. under the GNU General Public License.
-%
-% See the files LICENSE_LPPL and LICENSE_GPL for more details.
-
-% Load other libraries
-\usetikzlibrary{shapes}
-\usetikzlibrary{fit}
-\usetikzlibrary{chains}
-\usetikzlibrary{arrows}
-
-% Nodes
-% ----- 
-\usetikzlibrary{shadows.blur}
-\usetikzlibrary{shapes.symbols}
-\newcommand{\DAGnodedistance}{30pt}
-\newcommand{\DAGinnersep}{5pt}
-\newcommand{\DAGminsize}{20pt}
-\newcommand{\DAGfont}{\fontsize{10}{10}\selectfont}
-\newcommand{\DAGcolorfont}{black}
-\newcommand{\DAGcolorborder}{black}
-\newcommand{\DAGcolorfill}{white}
-\newcommand{\DAGlinewidth}{.7pt}
-\tikzstyle{basic} = [
-shape         =circle, 
-draw          =\DAGcolorborder,
-line width    =\DAGlinewidth,
-minimum size  =\DAGminsize,
-inner sep     =\DAGinnersep,
-font          =\DAGfont,
-text          =\DAGcolorfont,
-fill          =\DAGcolorfill,
-node distance =\DAGnodedistance,                  % for relative positions
-blur shadow={shadow blur steps=5}
-]
-\tikzstyle{latent}         = [basic]                        % Latent node
-\tikzstyle{obs}            = [basic, fill=gray!25]          % Observed node
-%% \tikzstyle{factor}         = [basic, fill=black, text=white]% Factor node
-\tikzstyle{factor}         = [rectangle, fill=black,minimum size=5pt, inner sep=0pt, node distance=0.4]
-\tikzstyle{factor caption} = [caption] %
-\tikzstyle{const}          = [basic, rectangle,]            % Constant node
-\tikzstyle{det}            = [basic, inner sep     =1pt, diamond]               % Deterministic node
-\tikzstyle{dist}           = [rectangle, draw, fill=black,minimum size=10pt, inner sep=0pt, node distance=0.4]
-\tikzstyle{operation}      = [basic, inner sep     =1pt, diamond]               % Deterministic node
-\tikzstyle{textnode}       = [basic, rectangle, inner sep=5pt]               % Deterministic node
-
-
-% Plate node
-% ---------- 
-\tikzset{
-  plate/.style={
-    draw = black,
-    shape=rectangle,
-    rounded corners=0.5ex,
-    thick,
-    minimum width=3.1cm,
-    text width=3.1cm,
-    align=right,
-    inner sep=10pt,
-    inner ysep=10pt,
-  }
-}
-\newcommand{\DAGplateinnersep}{15pt}
-\newcommand{\DAGplatecolorborder}{black}
-\tikzstyle{plate caption} = [
-  caption,
-  node distance=0,
-  inner sep=0pt,
-  below left=0pt and 0pt of #1.south east] %
-\tikzstyle{plate} = [
-  draw=black,
-  text width=3.1cm,
-  shape=rectangle,
-  solid,           % dashed, dotted
-  rounded corners,
-  fit=#1,
-  color         = \DAGplatecolorborder,
-  inner sep     = \DAGplateinnersep,
-  xshift=0cm,   % displacement to x direcation
-  yshift=0cm,   % displacement to y direcation
-  node distance=5pt, 
-]
-\tikzstyle{wrap}  = [inner sep=0pt, fit=#1]% Invisible wrapper node
-\tikzstyle{gate}  = [draw, rectangle, dashed, fit=#1]% Gate
-
-% Caption node
-% ------------ 
-\tikzstyle{caption} = [font=\footnotesize, node distance=0] %
-\tikzstyle{every label} += [caption] %
-
-\tikzset{>={triangle 45}}
-
-%\pgfdeclarelayer{b}
-%\pgfdeclarelayer{f}
-%\pgfsetlayers{b,main,f}
-
-% \factoredge [options] {inputs} {factors} {outputs}
-\newcommand{\factoredge}[4][]{ %
-  % Connect all nodes #2 to all nodes #4 via all factors #3.
-  \foreach \f in {#3} { %
-    \foreach \x in {#2} { %
-      \path (\x) edge[-,#1] (\f) ; %
-      %\draw[-,#1] (\x) edge[-] (\f) ; %
-    } ;
-    \foreach \y in {#4} { %
-      \path (\f) edge[->,#1] (\y) ; %
-      %\draw[->,#1] (\f) -- (\y) ; %
-    } ;
-  } ;
-}
-
-% \edge [options] {inputs} {outputs}
-\newcommand{\edge}[3][]{ %
-  % Connect all nodes #2 to all nodes #3.
-  \foreach \x in {#2} { %
-    \foreach \y in {#3} { %
-      \path (\x) edge [->,#1 ] (\y) ;%
-      %\draw[->,#1] (\x) -- (\y) ;%
-    } ;
-  } ;
-}
-
-% \factor [options] {name} {caption} {inputs} {outputs}
-\newcommand{\factor}[5][]{ %
-  % Draw the factor node. Use alias to allow empty names.
-  \node[factor, label={[name=#2-caption]#3}, name=#2, #1,
-  alias=#2-alias] {} ; %
-  % Connect all inputs to outputs via this factor
-  \factoredge {#4} {#2-alias} {#5} ; %
-}
-
-% \plate [options] {name} {fitlist} {caption}
-\newcommand{\plate}[4][]{ %
-  \node[wrap=#3] (#2-wrap) {}; %
-  \node[plate caption=#2-wrap] (#2-caption) {#4}; %
-  \node[plate=(#2-wrap)(#2-caption), #1] (#2) {}; %
-}
-
-% \gate [options] {name} {fitlist} {inputs}
-\newcommand{\gate}[4][]{ %
-  \node[gate=#3, name=#2, #1, alias=#2-alias] {}; %
-  \foreach \x in {#4} { %
-    \draw [-*,thick] (\x) -- (#2-alias); %
-  } ;%
-}
-
-% \vgate {name} {fitlist-left} {caption-left} {fitlist-right}
-% {caption-right} {inputs}
-\newcommand{\vgate}[6]{ %
-  % Wrap the left and right parts
-  \node[wrap=#2] (#1-left) {}; %
-  \node[wrap=#4] (#1-right) {}; %
-  % Draw the gate
-  \node[gate=(#1-left)(#1-right)] (#1) {}; %
-  % Add captions
-  \node[caption, below left=of #1.north ] (#1-left-caption)
-  {#3}; %
-  \node[caption, below right=of #1.north ] (#1-right-caption)
-  {#5}; %
-  % Draw middle separation
-  \draw [-, dashed] (#1.north) -- (#1.south); %
-  % Draw inputs
-  \foreach \x in {#6} { %
-    \draw [-*,thick] (\x) -- (#1); %
-  } ;%
-}
-
-% \hgate {name} {fitlist-top} {caption-top} {fitlist-bottom}
-% {caption-bottom} {inputs}
-\newcommand{\hgate}[6]{ %
-  % Wrap the left and right parts
-  \node[wrap=#2] (#1-top) {}; %
-  \node[wrap=#4] (#1-bottom) {}; %
-  % Draw the gate
-  \node[gate=(#1-top)(#1-bottom)] (#1) {}; %
-  % Add captions
-  \node[caption, above right=of #1.west ] (#1-top-caption)
-  {#3}; %
-  \node[caption, below right=of #1.west ] (#1-bottom-caption)
-  {#5}; %
-  % Draw middle separation
-  \draw [-, dashed] (#1.west) -- (#1.east); %
-  % Draw inputs
-  \foreach \x in {#6} { %
-    \draw [-*,thick] (\x) -- (#1); %
-  } ;%
-}
-
-% End graphs
-%==================================================
-
 #+END_SRC
